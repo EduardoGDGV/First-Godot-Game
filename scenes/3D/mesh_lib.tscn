@@ -1,0 +1,121 @@
+[gd_scene load_steps=26 format=3 uid="uid://bq33og3svj7d0"]
+
+[ext_resource type="Texture2D" uid="uid://c1stm4ohhv3hv" path="res://assets/sprites/3D/floor.png" id="1_u234p"]
+[ext_resource type="Texture2D" uid="uid://dudnjf2kr4tex" path="res://assets/sprites/3D/wall.png" id="2_s2pis"]
+[ext_resource type="Texture2D" uid="uid://b2pwkpudcuh3y" path="res://assets/sprites/3D/bath_wall.png" id="3_hiai8"]
+[ext_resource type="Texture2D" uid="uid://b2cag4fgxouhm" path="res://assets/sprites/3D/bath_info1.png" id="4_6pj26"]
+[ext_resource type="Texture2D" uid="uid://bu3ljf7t21gu3" path="res://assets/sprites/3D/bath_info2.png" id="5_kgnbh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77bcv"]
+albedo_texture = ExtResource("1_u234p")
+uv1_scale = Vector3(3, 2, 1)
+point_size = 89.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_nvfx4"]
+material = SubResource("StandardMaterial3D_77bcv")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5v1q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tffgj"]
+albedo_texture = ExtResource("2_s2pis")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hgqm5"]
+material = SubResource("StandardMaterial3D_tffgj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_loi8p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ovvj"]
+albedo_texture = ExtResource("3_hiai8")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7s8pw"]
+material = SubResource("StandardMaterial3D_2ovvj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_22jbs"]
+
+[sub_resource type="Gradient" id="Gradient_7tnd0"]
+offsets = PackedFloat32Array(0.642857, 0.650794)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n2dx0"]
+gradient = SubResource("Gradient_7tnd0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrpy1"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture1D_n2dx0")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xnvv1"]
+material = SubResource("StandardMaterial3D_jrpy1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sedbl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6oa0"]
+albedo_texture = ExtResource("4_6pj26")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6s7dl"]
+material = SubResource("StandardMaterial3D_n6oa0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3n54"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j3m8"]
+albedo_texture = ExtResource("5_kgnbh")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bx7mh"]
+material = SubResource("StandardMaterial3D_3j3m8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfvn6"]
+
+[node name="MeshLib" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_nvfx4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_y5v1q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0318934, 0.070974, 0.0113821)
+mesh = SubResource("BoxMesh_hgqm5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_loi8p")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7s8pw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_22jbs")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0910075, 0, 0)
+mesh = SubResource("BoxMesh_xnvv1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_sedbl")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_6s7dl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D"]
+shape = SubResource("BoxShape3D_r3n54")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_bx7mh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D"]
+shape = SubResource("BoxShape3D_lfvn6")

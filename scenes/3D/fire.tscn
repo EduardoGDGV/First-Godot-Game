@@ -1,0 +1,157 @@
+[gd_scene load_steps=21 format=3 uid="uid://bm87m2r2sa0mc"]
+
+[ext_resource type="Texture2D" uid="uid://byij5xnh4kj4f" path="res://assets/sprites/3D/vfxs2.png" id="1_65hkm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bwpq"]
+size = Vector3(0.210938, 0.316849, 0.057373)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kjo4"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cppng"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmv1n"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfvcp"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(960, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foofu"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(1024, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq7cx"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d01q"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixkjd"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heqkh"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i218a"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eox3i"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxyd8"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yudlw"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7hb5"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vejcv"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4bd4"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxgg1"]
+atlas = ExtResource("1_65hkm")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_teshi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kjo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cppng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmv1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfvcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foofu")
+}],
+"loop": false,
+"name": &"end",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq7cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d01q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixkjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_heqkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i218a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eox3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxyd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yudlw")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7hb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vejcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4bd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxgg1")
+}],
+"loop": false,
+"name": &"start",
+"speed": 4.0
+}]
+
+[node name="fire" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0166933, 0.15368, -0.391503)
+shape = SubResource("BoxShape3D_0bwpq")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="StaticBody3D/CollisionShape3D"]
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_teshi")
+animation = &"loop"
+autoplay = "loop"

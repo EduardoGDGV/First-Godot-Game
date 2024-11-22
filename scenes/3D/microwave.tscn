@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvy08kb8sanx3"]
+
+[ext_resource type="Texture2D" uid="uid://cll5avqor82oq" path="res://assets/sprites/3D/microwave.png" id="1_wjo1r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jduhy"]
+size = Vector3(2.57301, 1.91913, 2.90625)
+
+[node name="microwave" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -0.00904083, 0.0200888, -0.476563)
+shape = SubResource("BoxShape3D_jduhy")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+texture_filter = 0
+texture = ExtResource("1_wjo1r")
+region_enabled = true
+region_rect = Rect2(0, 63.4235, 256, 192.576)

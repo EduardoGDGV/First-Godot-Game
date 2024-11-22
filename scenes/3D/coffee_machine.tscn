@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://3gfstrstq11f"]
+
+[ext_resource type="Texture2D" uid="uid://cktjjqs4d3plu" path="res://assets/sprites/3D/coffee_machine.png" id="1_xsjse"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q10vb"]
+size = Vector3(1.24768, 2.35428, 1)
+
+[node name="coffee_machine" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -0.010437, -0.11647, 0)
+shape = SubResource("BoxShape3D_q10vb")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+texture_filter = 0
+texture = ExtResource("1_xsjse")
+region_enabled = true
+region_rect = Rect2(61.7481, 23.4988, 131.822, 232.501)

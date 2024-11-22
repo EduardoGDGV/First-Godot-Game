@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5n38qxwulv16"]
+
+[ext_resource type="Texture2D" uid="uid://37m2gws0dd3g" path="res://assets/sprites/3D/shower.png" id="1_q118d"]
+
+[node name="shower" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+texture_filter = 0
+texture = ExtResource("1_q118d")
+region_enabled = true
+region_rect = Rect2(78.1405, 5.05742, 89.4748, 250.943)

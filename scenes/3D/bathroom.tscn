@@ -1,0 +1,269 @@
+[gd_scene load_steps=40 format=3 uid="uid://dbrppgrblch18"]
+
+[ext_resource type="Texture2D" uid="uid://cdkxo0go7akdg" path="res://assets/sprites/3D/bathroom.png" id="1_a25m2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7bqc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltcqi"]
+albedo_color = Color(0, 0.860988, 0.860988, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tmr7t"]
+material = SubResource("StandardMaterial3D_ltcqi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mienu"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_suoql"]
+material = SubResource("StandardMaterial3D_mienu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0lxv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fhf5i"]
+material = SubResource("StandardMaterial3D_v0lxv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lakha"]
+albedo_color = Color(0, 0.491312, 0.491312, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p8ta0"]
+material = SubResource("StandardMaterial3D_lakha")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_civgq"]
+albedo_color = Color(0, 0.490196, 0.490196, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bray0"]
+material = SubResource("StandardMaterial3D_civgq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uoa55"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_027kn"]
+bottom_radius = 0.7
+height = 1.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_fvtf4"]
+inner_radius = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxds1"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_ypnu1"]
+material = SubResource("StandardMaterial3D_jxds1")
+inner_radius = 0.658
+outer_radius = 1.147
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4ddte"]
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_safq5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ssylc"]
+material = SubResource("StandardMaterial3D_safq5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntaov"]
+albedo_color = Color(0.458405, 0.458405, 0.458405, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1cha2"]
+material = SubResource("StandardMaterial3D_ntaov")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdlxq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0miuw"]
+albedo_color = Color(0.915372, 0.410868, 8.47101e-06, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xkns6"]
+material = SubResource("StandardMaterial3D_0miuw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0va"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7t7fm"]
+material = SubResource("StandardMaterial3D_5u0va")
+height = 0.8
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftjpe"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8d37d"]
+material = SubResource("StandardMaterial3D_ftjpe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1aae"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_25vjx"]
+material = SubResource("StandardMaterial3D_v1aae")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyvw8"]
+albedo_color = Color(0.607865, 0.250592, 0, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_o6hmg"]
+material = SubResource("StandardMaterial3D_gyvw8")
+radius = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbj0t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h4cen"]
+material = SubResource("StandardMaterial3D_mbj0t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wmk51"]
+albedo_color = Color(0.393086, 0.393086, 0.393085, 1)
+metallic = 0.3
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_j8r3s"]
+material = SubResource("StandardMaterial3D_wmk51")
+cap_top = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ot5s"]
+albedo_color = Color(0.270222, 0.270222, 0.270222, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_vxsi3"]
+material = SubResource("StandardMaterial3D_5ot5s")
+flip_faces = true
+cap_top = false
+
+[node name="bathroom" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="door" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="door"]
+
+[node name="Sprite3D" type="Sprite3D" parent="door/StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 2, 0.2)
+texture_filter = 0
+texture = ExtResource("1_a25m2")
+region_enabled = true
+region_rect = Rect2(47.6125, 9.70865, 931.39, 1002.13)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door/StaticBody3D"]
+transform = Transform3D(4.2, 0, 0, 0, 8.2, 0, 0, 0, 0.4, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_c7bqc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="door/StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 0.2, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_tmr7t")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="door/StaticBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.4, 1.4, 0.1, 0)
+mesh = SubResource("BoxMesh_suoql")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="door/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0.9, 0.1, 0.2)
+mesh = SubResource("BoxMesh_fhf5i")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="door/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0.9, 0.1, -0.2)
+mesh = SubResource("BoxMesh_fhf5i")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="door/StaticBody3D"]
+transform = Transform3D(0.1, 0, 0, 0, 8.2, 0, 0, 0, 0.2, 2.05, 0.1, 0)
+mesh = SubResource("BoxMesh_p8ta0")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="door/StaticBody3D"]
+transform = Transform3D(0.1, 0, 0, 0, 8.2, 0, 0, 0, 0.2, -2.05, 0.1, 0)
+mesh = SubResource("BoxMesh_p8ta0")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="door/StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 0.2, 0, -3.95, 0)
+mesh = SubResource("BoxMesh_bray0")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="door/StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 0.2, 0, 4.15, 0)
+mesh = SubResource("BoxMesh_bray0")
+
+[node name="toilet" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, -10)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="toilet"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="toilet/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2.9, 0, 0, 0, 2.5, 0, 1, 0)
+shape = SubResource("BoxShape3D_uoa55")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="toilet/StaticBody3D"]
+mesh = SubResource("CylinderMesh_027kn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="toilet/StaticBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 1.2, 0, 0, 0, 0.9, 0, 0.5, 0.2)
+mesh = SubResource("TorusMesh_fvtf4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="toilet/StaticBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.3, 0, 0, 0, 0.8, 0, 0.85, 0.3)
+mesh = SubResource("TorusMesh_ypnu1")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="toilet/StaticBody3D"]
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.8, 0, 0.95, 0.3)
+mesh = SubResource("CylinderMesh_4ddte")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="toilet/StaticBody3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 0.5, 0, 0.1, -0.7)
+mesh = SubResource("BoxMesh_ssylc")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="toilet/StaticBody3D"]
+transform = Transform3D(1.9, 0, 0, 0, 1.8, 0, 0, 0, 0.7, 0, 1.5, -0.8)
+mesh = SubResource("BoxMesh_ssylc")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="toilet/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.5, 1.8, -0.5)
+mesh = SubResource("BoxMesh_1cha2")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="toilet/StaticBody3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.6, 1.8, -0.4)
+mesh = SubResource("BoxMesh_1cha2")
+
+[node name="plunger" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4, -10)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="plunger"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plunger/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 2.7, 0, 0, 0, 1, 0, 1.35, 0)
+shape = SubResource("BoxShape3D_jdlxq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="plunger/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 2, 0, 0, 0, 0.2, 0, 1.7, 0)
+mesh = SubResource("BoxMesh_xkns6")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="plunger/StaticBody3D"]
+mesh = SubResource("SphereMesh_7t7fm")
+
+[node name="paperoll" type="Node3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -3.7, -2, -10)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="paperoll"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="paperoll/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 0.1, 0, 0.1, 0, -1, 0, -4.37114e-09, 0.5, 0, 0)
+mesh = SubResource("BoxMesh_8d37d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="paperoll/StaticBody3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.2, 0, -0.55)
+mesh = SubResource("BoxMesh_8d37d")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="paperoll/StaticBody3D"]
+transform = Transform3D(0.35, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.375, 0, 0.55)
+mesh = SubResource("BoxMesh_8d37d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="paperoll/StaticBody3D"]
+transform = Transform3D(9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, 0.5, 0, 0)
+mesh = SubResource("TubeTrailMesh_25vjx")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="paperoll/StaticBody3D"]
+transform = Transform3D(1.14641e-15, 2.62268e-08, 0.6, 0.6, -2.62268e-08, 0, 2.62268e-08, 0.6, -2.62268e-08, 0.5, 0, 0)
+mesh = SubResource("TubeTrailMesh_o6hmg")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="paperoll/StaticBody3D"]
+transform = Transform3D(-2.18557e-08, 0, 0.1, 0, 0.5, 0, -0.5, 0, -4.37114e-09, 0.7, -0.26, 0)
+mesh = SubResource("BoxMesh_h4cen")
+
+[node name="trash" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="trash"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="trash/StaticBody3D"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.5, -3.5, -0.5)
+mesh = SubResource("TubeTrailMesh_j8r3s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="trash/StaticBody3D"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.5, -3.5, -0.5)
+mesh = SubResource("TubeTrailMesh_vxsi3")

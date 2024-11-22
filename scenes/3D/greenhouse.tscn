@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnf5fmu6qbvw2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aokcb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3g28y"]
+material = SubResource("StandardMaterial3D_aokcb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1tkk"]
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+albedo_color = Color(6.16074e-06, 0.664592, 0.858044, 0.235294)
+metallic_specular = 0.4
+metallic_texture_channel = 2
+roughness = 0.0
+roughness_texture_channel = 2
+clearcoat_enabled = true
+clearcoat_roughness = 0.1
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.1
+refraction_enabled = true
+refraction_scale = 0.01
+refraction_texture_channel = 2
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4jw47"]
+material = SubResource("StandardMaterial3D_r1tkk")
+
+[node name="greenhouse" type="Node3D"]
+
+[node name="frame" type="Node3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="frame"]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 0.3, -5, 1.6, 0)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../../doors")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="frame"]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 0.3, 5, 1.6, 0)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../../doors")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="frame"]
+transform = Transform3D(-4.37114e-09, -10.1, 0, 0.1, -4.41485e-07, 0, 0, 0, 0.3, 0, 0.05, 0)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../../doors")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="frame"]
+transform = Transform3D(-4.37114e-09, -10.1, 0, 0.1, -4.41485e-07, 0, 0, 0, 0.3, 0, 3.05, 0)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../../doors")
+
+[node name="doors" type="Node3D" parent="."]
+
+[node name="left" type="Node3D" parent="doors"]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="doors/left"]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 0.1, -4.9, 1.6, 0.05)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="doors/left"]
+transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.3, -4.5, 1.6, 0.05)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="doors/left"]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 0.1, -0.05, 1.6, 0.05)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="doors/left"]
+transform = Transform3D(4.78, 0, 0, 0, 3, 0, 0, 0, 0.05, -2.47, 1.55, 0.05)
+transparency = 0.9
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("BoxMesh_4jw47")
+skeleton = NodePath("../..")
+
+[node name="right" type="Node3D" parent="doors"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="doors/right"]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 0.1, 0.05, 1.6, -0.05)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="doors/right"]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 0.1, 4.9, 1.6, -0.05)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="doors/right"]
+transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 0.3, 4.5, 1.6, -0.05)
+mesh = SubResource("BoxMesh_3g28y")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="doors/right"]
+transform = Transform3D(4.8, 0, 0, 0, 3, 0, 0, 0, 0.05, 2.47, 1.55, -0.05)
+transparency = 0.95
+mesh = SubResource("BoxMesh_4jw47")
+skeleton = NodePath("../..")

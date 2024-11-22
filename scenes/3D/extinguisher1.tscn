@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5rf0juyewycr"]
+
+[ext_resource type="Texture2D" uid="uid://bhx2o0axu1ay6" path="res://assets/sprites/3D/extinguisher.png" id="1_0013i"]
+[ext_resource type="FontFile" uid="uid://mjgviclemkpo" path="res://assets/fonts/Pixelon-E4JEg.otf" id="2_o11x3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1x4gp"]
+size = Vector3(1.13699, 2.65521, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nyonc"]
+line_spacing = 2.0
+font = ExtResource("2_o11x3")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1uwx1"]
+viewport_path = NodePath("StaticBody3D/SubViewport")
+
+[node name="extinguisher1" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0.248015, 0.0335999, 0.124288)
+shape = SubResource("BoxShape3D_1x4gp")
+
+[node name="SubViewport" type="SubViewport" parent="StaticBody3D"]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="StaticBody3D/SubViewport"]
+z_index = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "CO₂"
+label_settings = SubResource("LabelSettings_nyonc")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+texture_filter = 0
+texture = ExtResource("1_0013i")
+region_enabled = true
+region_rect = Rect2(0, 0, 177.86, 256)
+
+[node name="Sprite3D2" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.00118983, -0.387688, 0.180865)
+texture_filter = 0
+texture = SubResource("ViewportTexture_1uwx1")
+region_enabled = true
+region_rect = Rect2(-55, -30, 126.75, 127.776)

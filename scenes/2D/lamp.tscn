@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://j2a7e63qd1rf"]
+
+[ext_resource type="Texture2D" uid="uid://bmx8ovyuq21jr" path="res://assets/sprites/2D/items.png" id="1_ig62i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0tm0"]
+atlas = ExtResource("1_ig62i")
+region = Rect2(0, 96.0561, 15.5755, 16.4167)
+
+[sub_resource type="Gradient" id="Gradient_o8qw0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xkxbh"]
+gradient = SubResource("Gradient_o8qw0")
+fill_to = Vector2(0.5, 0.5)
+
+[node name="lamp" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = SubResource("AtlasTexture_c0tm0")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+z_index = 7
+position = Vector2(-9.53674e-07, 113)
+rotation = 0.657989
+scale = Vector2(3, 3)
+skew = 0.254818
+color = Color(0.986004, 0.9777, 0.828149, 1)
+energy = 0.5
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.784314)
+texture = SubResource("GradientTexture2D_xkxbh")
+height = 100.0

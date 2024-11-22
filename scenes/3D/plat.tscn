@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqnb62ryfv7x1"]
+
+[ext_resource type="Texture2D" uid="uid://bfleqdroqh4yw" path="res://assets/sprites/3D/wood.png" id="1_24nld"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ncte"]
+albedo_color = Color(0.592157, 0.305882, 0.172549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uvum0"]
+material = SubResource("StandardMaterial3D_2ncte")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n0t0"]
+albedo_texture = ExtResource("1_24nld")
+uv1_scale = Vector3(5, 6, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gakry"]
+material = SubResource("StandardMaterial3D_4n0t0")
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mt45"]
+
+[node name="cabinet" type="Node3D"]
+transform = Transform3D(1.001, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="drawer" type="Node3D" parent="."]
+
+[node name="corners" type="Node3D" parent="drawer"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="drawer/corners"]
+transform = Transform3D(-4.37114e-09, -2, 0, 0.1, -8.74228e-08, 0, 0, 0, 0.1, 0, 2, 0.95)
+mesh = SubResource("BoxMesh_uvum0")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="drawer/corners"]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 1.05, 1.545, -1.05)
+mesh = SubResource("BoxMesh_uvum0")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="drawer/corners"]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, -1.05, 1.545, -1.05)
+mesh = SubResource("BoxMesh_uvum0")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="drawer/corners"]
+transform = Transform3D(0.1, 0, 0, 0, 0.972022, -0.0906308, 0, 2.08451, 0.0422618, 1.05, 1.5, -0.05)
+mesh = SubResource("BoxMesh_uvum0")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="drawer/corners"]
+transform = Transform3D(0.1, 0, 0, 0, 0.972022, -0.0906308, 0, 2.08451, 0.0422618, -1.05, 1.5, -0.05)
+mesh = SubResource("BoxMesh_uvum0")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="drawer/corners"]
+transform = Transform3D(-4.37114e-09, -2, 0, 0.1, -8.74228e-08, 0, 0, 0, 0.1, 0, 2, -1.05)
+mesh = SubResource("BoxMesh_uvum0")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="drawer/corners"]
+transform = Transform3D(1.91069e-16, 8.74228e-08, 0.1, 0.1, -8.74228e-08, 0, 4.37114e-09, 2, -4.37114e-09, 1.05, 2, 0)
+mesh = SubResource("BoxMesh_uvum0")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="drawer/corners"]
+transform = Transform3D(1.91069e-16, 8.74228e-08, 0.1, 0.1, -8.74228e-08, 0, 4.37114e-09, 2, -4.37114e-09, -1.05, 2, 0)
+mesh = SubResource("BoxMesh_uvum0")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="faces" type="Node3D" parent="drawer"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="drawer/faces"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.43446e-07, 0, -1.50996e-07, -0.95, 0, 2, -0.05)
+mesh = SubResource("BoxMesh_gakry")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="drawer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="drawer/StaticBody3D"]
+transform = Transform3D(2.2, 0, 0, 0, 0.6, 0, 0, 0, 0.45, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_8mt45")

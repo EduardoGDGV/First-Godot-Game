@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bboktrtd0t6pe"]
+
+[ext_resource type="Texture2D" uid="uid://4ninoa2ct7qq" path="res://assets/sprites/3D/trash3.png" id="1_1yks7"]
+[ext_resource type="Texture2D" uid="uid://dlwvxtu3gn5g0" path="res://assets/sprites/3D/biohazard.png" id="2_6ynb2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nwc34"]
+size = Vector3(1.16275, 2.20116, 1)
+
+[node name="trash1" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -0.0167084, 0.0067215, 0)
+shape = SubResource("BoxShape3D_nwc34")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+texture_filter = 0
+texture = ExtResource("1_1yks7")
+region_enabled = true
+region_rect = Rect2(61.0651, 38.5251, 133.871, 217.475)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.422082, -0.126077)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0603932)
+
+[node name="Sprite3D2" type="Sprite3D" parent="StaticBody3D2"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.110745, 0.473375)
+texture_filter = 0
+texture = ExtResource("2_6ynb2")
